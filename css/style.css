@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(238, 238, 238, 0.7);
+    margin-top: 100px auto;
+    position: relative;
+    overflow: hidden;
+}
+.big-circle::before {
+    content: "";
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    z-index: -5;
+    border-radius: 50%;
+    border: 10px solid #ffbe54;
+    border-bottom: 10px solid transparent;
+    animation: rotate-circle 60s linear 0s infinite backwards normal;
+}
+.big-circle {
+    width: 600px;
+    height: 600px;
+    background-color: #ffde77;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    margin-right: -450px;
+    margin-top: -400px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+}
+.big-circle h4:last-child {
+    margin-left: 200px;
+    margin-top: -20px;
+}
+h1 {
+    font-size: 4em;
+    font-weight: bold;
+    margin-top: -50px;
+}
+h2 {
+    font-size: 3em;
+    margin-top: -50px;
+    letter-spacing: 25px;
+}
+h4:first-of-type {
+    font-size: 30px;
+}
+
+.small-circle::before {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    left: 0;
+    margin-left: -5px;
+    margin-top: -5px;
+    border-radius: 50%;
+    border: 5px solid #ffbe54;
+    border-bottom: 5px solid transparent;
+    animation: rotate-circle 6s linear 0s infinite backwards reverse;
+}
+.small-circle {
+    width: 100px;
+    height: 100px;
+    background-color: #ffde77;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    margin-right: -50px;
+    margin-top: -50px;
+    border-radius: 50%;
+}
+.very-small-circle::before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    left: 0;
+    margin-left: -3px;
+    margin-top: -3px;
+    border-radius: 50%;
+    border: 3px solid #ffbe54;
+    border-bottom: 3px solid transparent;
+    animation: rotate-circle 3s linear 0s infinite backwards normal;
+}
+.very-small-circle {
+    width: 25px;
+    height: 25px;
+    background-color: #ffde77;
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    margin-right: -50px;
+    margin-top: -50px;
+    border-radius: 50%;
+}
+
+.big-square {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 400px;
+    height: 800px;
+    background-color: #e8a759;
+    transform: rotate(-30deg);
+    margin-left: -150px;
+    margin-top: -300px;
+    z-index: 3;
+}
+
+.footer {
+    width: 100%;
+    height: 140px;
+    background: #ffbe54;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.animi {
+    width: 15px;
+    height: 100px;
+    position: absolute;
+    bottom: 100px;
+    left: 65%;
+    z-index: 3;
+    perspective: 300px;
+}
+.animi .rect {
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    position: absolute;
+    z-index: 3;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.animi .cont {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin-top: 5px;
+    z-index: 3;
+    transform-origin: center top;
+    animation: rotate 1.3s ease-in-out 0s infinite backwards alternate-reverse;
+}
+.cont .wire {
+    width: 2px;
+    height: 80px;
+    background-color: #333;
+    position: absolute;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.animi .circle {
+    width: 20px;
+    height: 20px;
+    background: #333;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin-bottom: 10px;
+    margin-left: -10px;
+}
+
+@keyframes rotate {
+    0%{
+        transform: rotate(80deg);
+    }
+    100%{
+        transform: rotate(-80deg);
+    }
+}
+
+.animi .rect2 {
+    width: 100%;
+    height: 180px;
+    background-color: #333;
+    position: absolute;
+    transform-origin: center top;
+    transform: translate(5.5px,91px) rotate(45deg) skew(10deg,30deg);
+    opacity: 0.3;
+    z-index: 3;
+}
+/* .animi .cont2 {
+    width: 100%;
+    height: 150px;
+    position: absolute;
+    margin-top: 5px;
+    z-index: 3;
+    transform-origin: center bottom;
+    transform: translate(-100px,50px) rotate(45deg) skewY(30deg);
+    animation: rotate3d 1.3s ease-in-out 0s infinite backwards alternate-reverse;
+}
+.cont2 .wire {
+    width: 2px;
+    height: 80px;
+    background-color: #333;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin-left: -8px;
+}
+
+.cont2 .circle {
+    width: 20px;
+    height: 20px;
+    background: #333;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-top: 55px;
+    margin-left: -17px;
+}
+@keyframes rotate3d {
+    0%{
+        transform: rotate3d(0,0,0.1,80deg);
+    }
+    100%{
+        transform: rotate3d(0,0,0.1,-80deg);
+    }
+} */
+
+@keyframes rotate-circle {
+    to{
+        transform: rotate(1turn);
+    }
+}
